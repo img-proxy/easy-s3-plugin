@@ -6,7 +6,7 @@ This tiny JS script allows uploading files to img-proxy.com more easily.
 
 1. Include the library in your HTML page:
 ```html
-<script type="text/javascript" src="https://unpkg.com/@img-proxy.com/easy-s3-plugin@1.0.1/dist/easy-s3.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/@img-proxy.com/easy-s3-plugin/dist/easy-s3.min.js"></script>
 ```
 
 2. Create an `<input type="file">` and specify an ID (as well as other options [as permitted by the API](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input/file)). 

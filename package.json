@@ -1,6 +1,6 @@
 {
   "name": "@img-proxy.com/easy-s3-plugin",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Tiny JS plugin to upload files to img-proxy.com.",
   "main": "dist/easy-s3.min.js",
   "scripts": {

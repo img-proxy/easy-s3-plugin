@@ -13,7 +13,7 @@ function EasyS3(selector, options) {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
-                "X-Authorization": `Secret: ${options.secret}`,
+                "X-Authorization": `Secret: ${options.apiKeySecret}`,
               },
               body: JSON.stringify({
                 fileSize: file.size,

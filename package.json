@@ -1,0 +1,23 @@
+{
+  "name": "@img-proxy.com/easy-s3-plugin",
+  "version": "1.0.0",
+  "description": "Tiny JS plugin to upload files to img-proxy.com.",
+  "main": "easy-s3.js",
+  "scripts": {
+    "build": "uglifyjs --compress --mangle --output ./dist/easy-s3.min.js easy-s3.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/img-proxy-com/easy-s3-plugin.git"
+  },
+  "author": "img-proxy.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/img-proxy-com/easy-s3-plugin/issues"
+  },
+  "homepage": "https://github.com/img-proxy-com/easy-s3-plugin#readme",
+  "devDependencies": {
+    "prettier": "^2.5.1",
+    "uglify-js": "^3.14.5"
+  }
+}

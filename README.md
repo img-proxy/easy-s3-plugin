@@ -18,7 +18,8 @@ This tiny JS script allows uploading files to img-proxy.com more easily.
 3. Then, in your `<script>` section, instantiate a new EasyS3 object:
 
 ```javascript
-const easyS3 = new EasyS3("#easy_s3", {
+const easyS3 = new EasyS3({
+    selector: "#easy_s3",
     domain: 'https://yourdomain.img-pro.xyz',
     apiKeySecret: 'YOUR_API_KEY_SECRET'
 })

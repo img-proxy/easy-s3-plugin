@@ -1,28 +1,36 @@
-function EasyS3(options) {
-  if (!options.domain || !options.apiKeySecret) {
-    throw new Error("Missing options for Easy S3.");
+export interface EasyS3Args {
+  domain: string;
+  apiKeySecret: string;
+}
+
+export interface EasyS3UploadResponse {
+  s3: Record<string, string>;
+  misc: {
+    file_name: string;
+    file_size: number;
+    public_url: string;
+  };
+}
+
+export class EasyS3 {
+  private readonly domain: string;
+  private readonly apiKeySecret: string;
+
+  constructor(options: EasyS3Args) {
+    this.domain = options.domain;
+    this.apiKeySecret = options.apiKeySecret;
   }
 
-  function autoInit() {
-    if (!options.selector) {
-      throw new Error("Missing selector for Easy S3.");
-    }
-
-    document.querySelector(options.selector).onchange = async (event) => {
-      await this.upload([...event.target.files]);
-    };
-  }
-
-  this.upload = async function (files) {
+  async upload(files: File[]) {
     return Promise.all(
       files.map(async (file) => {
         // Retrieve pre-signed URL to send file directly to S3…
-        const signedRequestS3 = await (
-          await fetch(`${options.domain}/u`, {
+        const signedRequestS3: EasyS3UploadResponse = await (
+          await fetch(`${this.domain}/u`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
-              "X-Authorization": `Secret: ${options.apiKeySecret}`,
+              "X-Authorization": `Secret: ${this.apiKeySecret}`,
             },
             body: JSON.stringify({
               fileSize: file.size,
@@ -37,7 +45,7 @@ function EasyS3(options) {
         Object.entries(signedRequestS3.s3.fields).forEach(([k, v]) => {
           form.append(k, v);
         });
-        form.append("file", file); // Must be the last element added!
+        form.append("file", file);
 
         // Send file.
         return await fetch(signedRequestS3.s3.url, {
@@ -56,9 +64,7 @@ function EasyS3(options) {
         });
       })
     );
-  };
-
-  if (options.selector) {
-    autoInit();
   }
 }
+
+export default EasyS3;

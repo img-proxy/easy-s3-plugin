@@ -1,6 +1,6 @@
 {
-  "name": "@img-proxy.com/easy-s3-plugin",
-  "version": "1.2.0",
+  "name": "@img-proxy/easy-s3-plugin",
+  "version": "1.2.1",
   "description": "Tiny JS plugin to upload files to img-proxy.com.",
   "main": "dist/index.min.js",
   "types": "dist/index.d.ts",
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/img-proxy-com/easy-s3-plugin.git"
+    "url": "git+https://github.com/img-proxy/easy-s3-plugin.git"
   },
-  "author": "img-proxy.com",
+  "author": "img-proxy",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/img-proxy-com/easy-s3-plugin/issues"
+    "url": "https://github.com/img-proxy/easy-s3-plugin/issues"
   },
-  "homepage": "https://github.com/img-proxy-com/easy-s3-plugin#readme",
+  "homepage": "https://github.com/img-proxy/easy-s3-plugin#readme",
   "devDependencies": {
     "prettier": "^2.5.1",
     "typescript": "^4.5.5",
